@@ -1,17 +1,18 @@
 const router = require('express').Router();
 
-const {
-  getAllUsers, getUser, updateUser, deleteUser, getMe, search
-} = require('./users-controller');
+const { getMe } = require('./users-controller');
 
-router.get('/', getAllUsers);
-router.get('/me', getMe);
-router.get('/search', search);
+router.route('/')
+  .get(getMe);
 
-router.route('/:user_id')
-  .all(adminAuth)
-  .get(getUser)
-  .put(updateUser)
-  .delete(deleteUser);
+// router.get('/', getAllUsers);
+// router.get('/me', getMe);
+// router.get('/search', search);
+
+// router.route('/:user_id')
+//   .all(adminAuth)
+//   .get(getUser)
+//   .put(updateUser)
+//   .delete(deleteUser);
 
 module.exports = router;

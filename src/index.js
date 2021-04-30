@@ -10,7 +10,7 @@ require('dotenv').config({
 
 const { connectDB, mongoClose } = require('smart-models-db');
 
-const { router } = require('./_common/middlewares/routes');
+const router = require('./routes');
 
 app.use(cors());
 
