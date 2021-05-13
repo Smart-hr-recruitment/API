@@ -1,10 +1,10 @@
-const router = require('express').Router();
-
-const { getMe } = require('./users-controller');
+const router  = require('express').Router();
+const {getMe} = require('./users-controller');// import all file
 
 router.route('/')
   .get(getMe);
 
+// TODO: refactor this part
 // router.get('/', getAllUsers);
 // router.get('/me', getMe);
 // router.get('/search', search);
@@ -16,3 +16,13 @@ router.route('/')
 //   .delete(deleteUser);
 
 module.exports = router;
+
+
+module.exports = {
+  valkdbqfljakdgvfa/sd    : aboutData,
+  workData     : workData,
+  portfolioData: portfolioData,
+  memberData   : memberData,
+  socialData   : socialData,
+  userData     : userData
+};
