@@ -1,0 +1,37 @@
+<div class="subject">
+    <div class="table-head">
+        <h2>{{subject.name}} (Թեմաներ)</h2>
+        <a class="btn-small" href="/subjects/lessons/create/{{subId}}">Ավելացնել թեմա</a>
+    </div>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Թեմա</th>
+            <th scope="col">Տեսակը</th>
+            <th scope="col">Ամսաթիվ</th>
+            <th scope="col">Գործողություններ</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each lessons}}
+            <form action="/subjects/lessons/{{subject_id}}/delete/{{_id}}" method="GET">
+                <tr>
+                    <th scope="row">{{inc @index}}</th>
+                    <td>
+                        <a href="/subjects/lessons/{{subject_id}}/{{_id}}">
+                        {{topic}}</a>
+                    </td>
+                    <td>{{type}}</td>
+                    <td>{{date}}</td>
+                    <td>
+                        <button class="btn-small" type="submit">Ջնջել</button>
+                    </td>
+                </tr>
+            </form>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,32 @@
+<div class="student">
+    <div class="table-head">
+        <h2>{{group.name}} Ուսանողներ</h2>
+        <h3><a class="btn btn-small" href="/groups/subjects/{{groupId}}">Մատյան</a></h3>
+        <a class="btn btn-small" href="/groups/students/create/{{groupId}}">Ավելացնել ուսանող</a>
+    </div>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Անուն, ազգանուն</th>
+            <th scope="col">Գործողություններ</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each students}}
+            <form action="/groups/students/{{group_id}}/delete/{{_id}}" method="GET">
+                <tr>
+                    <th scope="row">{{inc @index}}</th>
+                    <td>{{fullName}}</td>
+                    <td>
+                        <a class="btn btn-small" href="/groups/students/{{group_id}}/{{_id}}">Փոփոխել</a>
+                        <button class="btn btn-small" type="submit">Ջնջել</button>
+                    </td>
+                </tr>
+            </form>
+        {{/each}}
+        </tbody>
+    </table>
+</div>
+

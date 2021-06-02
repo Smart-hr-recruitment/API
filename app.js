@@ -1,20 +1,20 @@
-const {connectDB, mongoClose} = require('smart-models-db');
-const router                  = require('./src/routes');
-const cors                    = require('cors');
-const express                 = require('express');
-const bodyParser              = require('body-parser');
-const morgan                  = require('morgan');
-const app                     = express();
-const env                     = process.env;
+require('dotenv').config('./.env');
 
-const mongoUri   = env.MONGO_URI || '';
+const cors                      = require('cors');
+const express                   = require('express');
+const app                       = express();
+const { connectDB, mongoClose } = require('smart-models-db');
+
+const router                    = require('./src/routes');
+
+const env        = process.env;
 const port       = env.PORT || '8080';
+const mongoUri   = env.MONGO_URI || 'Another mongo base';
 const apiVersion = env.API_VERSION || '';
 
 app.use(cors());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
-app.use(morgan('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
