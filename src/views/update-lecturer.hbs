@@ -1,0 +1,15 @@
+<div class="row">
+    <form action="/lecturers/{{lecturer._id}}" method="POST">
+        <h2>{{lecturer.fullName}}</h2>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" name="fullName" value="{{lecturer.fullName}}">
+                <label>Անուն, ազգանուն</label>
+            </div>
+        </div>
+
+        <button type="submit" class="btn">Փոփոխել</button>
+    </form>
+</div>
+
