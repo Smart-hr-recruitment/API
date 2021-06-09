@@ -1,6 +1,4 @@
-module.exports = getData = (body, params) => {
-  return {
-    body  : body,
-    params: params
-  };
-};
+// module.exports = getData = (body, params) => ({
+//   body,
+//   params
+// });

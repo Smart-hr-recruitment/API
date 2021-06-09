@@ -1,8 +1,9 @@
-const express            = require('express');
-const router             = express.Router();
-const validations        = require('../validations');
-const { userController } = require('../controllers');
+// const express = require('express');
 
-router.get('/:userId', validations.userValidation, userController);
+// const router = express.Router();
+// const validations = require('../validations');
+// const { userController } = require('../controllers');
 
-module.exports = router;
+// router.get('/:userId', validations.userValidation, userController);
+
+// module.exports = router;
