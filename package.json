@@ -5,21 +5,24 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "lint": "node ./node_modules/eslint/bin/eslint.js ./src",
+    "lint:fix": "node ./node_modules/eslint/bin/eslint.js ./src --fix"
   },
   "keywords": [],
   "author": "@adamianlina",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^7.27.0",
+    "eslint": "^7.28.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-import": "^2.23.4",
     "nodemon": "^2.0.7"
   },
   "dependencies": {
+    "compose-middleware": "^5.0.1",
     "cors": "^2.8.5",
-    "dotenv": "^8.6.0",
+    "dotenv-flow": "^3.2.0",
     "express": "^4.17.1",
-    "smart-models-db": "^1.0.8"
+    "smart-models-db": "^1.0.9"
   }
 }

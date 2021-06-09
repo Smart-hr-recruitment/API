@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
-const usersRoutes = require('./usersRoute');
+const { combine } = require('../middlewares');
+
 const employeesRoutes = require('./employeesRoute');
 const positionsRoutes = require('./positionsRoute');
 const vacanciesRoutes = require('./vacanciesRoute');
@@ -8,7 +9,12 @@ const vacancySkillsRoutes = require('./vacancySkillsRoute');
 const positionSkillsRoutes = require('./positionSkillsRoute');
 const employeeSkillsRoutes = require('./employeeSkillsRoute');
 
-router.use('/users', usersRoutes);
+/*
+ Composing multiple middleware functions
+ into a single request middleware handler
+*/
+router.use(combine);
+
 router.use('/employees', employeesRoutes);
 router.use('/positions', positionsRoutes);
 router.use('/vacancies', vacanciesRoutes);

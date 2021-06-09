@@ -1,3 +1,3 @@
 module.exports = {
-  helper: require('./helper')
+  createVacancySkills: require('./createVacancySkills')
 };

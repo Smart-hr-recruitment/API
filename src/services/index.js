@@ -1,4 +1,3 @@
-module.exports = {
-  getData: require('./dataService')
-};
-
+// module.exports = {
+//   getData: require('./dataService')
+// };
